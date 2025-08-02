@@ -24,5 +24,14 @@ Tananat is a robust backend system built with Django that offers:
 3.Apply migrations
   python manage.py migrate   
 4.Run the server
-  python manage.py runserver 
+  python manage.py runserver
+**API endpoint**
+1.For AuthApp - Authentication & Permission
+ Endpoint-auth/check_permission/ for checking user permission access
+2.Tenant -User invitations & dashbaords.
+  Endpoint- api/invite/ -->> for create a user invitation.
+  Endpoint-api/invite/accept/   --->>> for  accepting invitation via toekn/link
+  Endpoint-api/invite/cancel/ --->>> for cancelling the invitation
+  Endpoint- api/dashboard/   --->> for project /user dashboard
+  Endpoint-- api/dashboard_logging/ -->>> for viewing logging info on dashboard
   
