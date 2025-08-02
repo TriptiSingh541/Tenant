@@ -1,0 +1,18 @@
+server:
+  http_listen_port: 9080       # Promtail metrics endpoint
+  grpc_listen_port: 0          # Disable gRPC (not needed for basic setups)
+
+positions:
+  filename: /tmp/positions.yaml  # File to track how much of each file was read
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push  # Push logs to Loki (service name in Docker)
+
+scrape_configs:
+  - job_name: system
+    static_configs:
+      - targets:
+          - localhost             # Required but unused; needed syntactically
+        labels:
+          job: varlogs
+          __path__: /var/log/*.log  # Matches all .log files in the /var/log/ directory
